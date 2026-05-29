@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Старый фермер — MVP веб-сервиса доставки фермерской продукции напрямую от малых производителей к конечному потребителю.">
+  <title>Корзина — Старый фермер</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержимому</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="На главную">
+        <img src="assets/img/logo.svg" alt="" aria-hidden="true">
+        <span><strong>Старый фермер</strong><span>прямо от хозяйств</span></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Основное меню">
+        <a class="nav-link" data-nav-link href="index.html">Главная</a>
+        <a class="nav-link" data-nav-link href="catalog.html">Каталог</a>
+        <a class="nav-link" data-nav-link href="farmers.html">Фермеры</a>
+        <a class="nav-link" data-nav-link href="delivery.html">Доставка</a>
+        <a class="nav-link" data-nav-link href="farmer-cabinet.html">Кабинет фермера</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cart-pill" href="cart.html" aria-label="Перейти в корзину"><b>Корзина</b><span data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="breadcrumbs"><a href="index.html">Главная</a><span>/</span><span>Корзина</span></div>
+          <span class="kicker">Оформление заказа</span>
+          <h1>Корзина и доставка</h1>
+          <p class="lead">Проверьте товары, выберите адрес и временное окно. Это демо-заказ без реальной оплаты.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="container cart-layout">
+        <div>
+          <div class="cart-items" data-cart-items></div>
+          <form class="checkout-card" data-checkout-form>
+            <span class="badge">Данные покупателя</span>
+            <h2 style="margin-top:14px">Оформить заказ</h2>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="name">Имя</label>
+                <input class="input" id="name" name="name" required placeholder="Дарья">
+              </div>
+              <div class="form-field">
+                <label for="phone">Телефон</label>
+                <input class="input" id="phone" name="phone" required placeholder="+7 900 000-00-00">
+              </div>
+              <div class="form-field full">
+                <label for="address">Адрес доставки</label>
+                <input class="input" id="address" name="address" required placeholder="Москва, улица, дом, квартира">
+              </div>
+              <div class="form-field">
+                <label for="date">Дата доставки</label>
+                <input class="input" id="date" name="date" type="date" data-slot-date required>
+              </div>
+              <div class="form-field">
+                <label for="time">Время</label>
+                <select class="select" id="time" name="time" required>
+                  <option value="10:00-12:00">10:00-12:00</option>
+                  <option value="12:00-14:00">12:00-14:00</option>
+                  <option value="16:00-18:00">16:00-18:00</option>
+                  <option value="18:00-20:00">18:00-20:00</option>
+                </select>
+              </div>
+              <div class="form-field full">
+                <label>Оплата</label>
+                <div class="radio-grid">
+                  <label class="radio-card"><input type="radio" name="payment" value="card-demo" checked><span><b>Картой онлайн</b><span>демо-подтверждение без списания</span></span></label>
+                  <label class="radio-card"><input type="radio" name="payment" value="after-check"><span><b>После проверки</b><span>подтверждение оператором</span></span></label>
+                </div>
+              </div>
+              <div class="form-field full">
+                <label for="comment">Комментарий</label>
+                <textarea class="textarea" id="comment" name="comment" placeholder="Например: оставить у двери, позвонить за 15 минут"></textarea>
+              </div>
+            </div>
+            <button class="btn full" type="submit" style="margin-top:18px">Подтвердить демо-заказ</button>
+            <p class="help-text">После оформления заказ появится в «Кабинете фермера» как демонстрационная запись.</p>
+          </form>
+          <div data-order-confirmation></div>
+        </div>
+        <aside class="cart-summary" data-cart-summary aria-label="Итог заказа"></aside>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-backdrop" data-modal aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge">Обратная связь</span>
+          <h3 id="modal-title" style="margin-top:12px">Связаться с сервисом</h3>
+        </div>
+        <button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button>
+      </div>
+      <form data-demo-form>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="modal-name">Имя</label>
+            <input class="input" id="modal-name" name="name" required placeholder="Ваше имя">
+          </div>
+          <div class="form-field">
+            <label for="modal-phone">Телефон</label>
+            <input class="input" id="modal-phone" name="phone" required placeholder="+7">
+          </div>
+          <div class="form-field full">
+            <label for="modal-message">Сообщение</label>
+            <textarea class="textarea" id="modal-message" name="message" placeholder="Вопрос о продукции, доставке или подключении фермера"></textarea>
+          </div>
+        </div>
+        <button class="btn full" type="submit" style="margin-top:16px">Сохранить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <img src="assets/img/logo.svg" alt="Логотип Старый фермер">
+            <span><strong>Старый фермер</strong><span>фермерская доставка</span></span>
+          </a>
+          <p>Демонстрационный MVP для ВКР: каталог, корзина, оформление заказа, обратная связь и кабинет производителя.</p>
+        </div>
+        <div>
+          <h4>Покупателю</h4>
+          <a href="catalog.html">Каталог</a>
+          <a href="delivery.html">Доставка</a>
+          <a href="cart.html">Корзина</a>
+        </div>
+        <div>
+          <h4>Производителю</h4>
+          <a href="farmers.html">Партнёры</a>
+          <a href="farmer-cabinet.html">Кабинет</a>
+          <a href="#" data-open-modal>Подключиться</a>
+        </div>
+        <div>
+          <h4>Проект</h4>
+          <a href="index.html#model">Бизнес-модель</a>
+          <a href="index.html#trust">Прозрачность</a>
+          <a href="#" data-open-modal>Обратная связь</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Старый фермер. Учебный проект.</span>
+        <span>Локальные данные хранятся в браузере.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>

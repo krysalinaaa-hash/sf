@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 220' role='img' aria-label='Фермер'>
+ <rect x='8' y='8' width='204' height='204' rx='62' fill='#EAF8E5'/>
+ <path d='M45 178c10-44 40-64 66-64s56 20 66 64' fill='#F2B84B'/>
+ <circle cx='110' cy='89' r='43' fill='#F1C69D' stroke='#244F27' stroke-width='6'/>
+ <path d='M57 77c25-49 86-50 108-1-44 17-78 17-108 1Z' fill='#244F27'/>
+ <path d='M71 75c14-36 40-51 77-42 0 21-10 39-31 52-18 11-35 9-46-10Z' fill='#F2B84B' opacity='.92'/>
+ <circle cx='94' cy='94' r='5' fill='#26371f'/><circle cx='126' cy='94' r='5' fill='#26371f'/>
+ <path d='M95 119c12 9 25 9 38 0' stroke='#7A3F1C' stroke-width='5' stroke-linecap='round' fill='none'/>
+ <path d='M50 185h120' stroke='#244F27' stroke-width='8' stroke-linecap='round' opacity='.22'/>
+</svg>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Старый фермер — MVP веб-сервиса доставки фермерской продукции напрямую от малых производителей к конечному потребителю.">
+  <title>Кабинет фермера — Старый фермер</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержимому</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="На главную">
+        <img src="assets/img/logo.svg" alt="" aria-hidden="true">
+        <span><strong>Старый фермер</strong><span>прямо от хозяйств</span></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Основное меню">
+        <a class="nav-link" data-nav-link href="index.html">Главная</a>
+        <a class="nav-link" data-nav-link href="catalog.html">Каталог</a>
+        <a class="nav-link" data-nav-link href="farmers.html">Фермеры</a>
+        <a class="nav-link" data-nav-link href="delivery.html">Доставка</a>
+        <a class="nav-link" data-nav-link href="farmer-cabinet.html">Кабинет фермера</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cart-pill" href="cart.html" aria-label="Перейти в корзину"><b>Корзина</b><span data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <div class="breadcrumbs"><a href="index.html">Главная</a><span>/</span><span>Кабинет фермера</span></div>
+          <span class="kicker">B2B-часть платформы</span>
+          <h1>Личный кабинет производителя</h1>
+          <p class="lead">Демо-раздел показывает вторую сторону сервиса: фермер добавляет позиции, видит заказы и контролирует комплектацию.</p>
+        </div>
+        <button class="btn" type="button" data-open-modal>Подключиться</button>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:24px">
+      <div class="container dashboard-grid">
+        <div>
+          <div class="panel-card">
+            <span class="badge honey">Демо-панель</span>
+            <h2 style="margin-top:14px">Показатели</h2>
+            <div class="panel-stats" data-dashboard-stats></div>
+          </div>
+          <form class="panel-card" style="margin-top:18px" data-product-form>
+            <span class="badge">Добавить товар</span>
+            <h2 style="margin-top:14px">Новая позиция</h2>
+            <div class="form-grid">
+              <div class="form-field full">
+                <label for="product-title">Название</label>
+                <input class="input" id="product-title" name="title" required placeholder="Например: Огурцы грунтовые">
+              </div>
+              <div class="form-field">
+                <label for="product-price">Цена, ₽</label>
+                <input class="input" id="product-price" name="price" type="number" min="1" required placeholder="250">
+              </div>
+              <div class="form-field">
+                <label for="product-category">Категория</label>
+                <select class="select" id="product-category" name="category" required>
+                  <option>Овощи</option><option>Молочные продукты</option><option>Фрукты</option><option>Мясо</option><option>Выпечка</option><option>Бакалея</option>
+                </select>
+              </div>
+              <div class="form-field">
+                <label for="product-freshness">Свежесть</label>
+                <input class="input" id="product-freshness" name="freshness" required placeholder="сбор сегодня">
+              </div>
+              <div class="form-field">
+                <label for="product-image">Иконка</label>
+                <select class="select" id="product-image" name="image">
+                  <option value="herbs.svg">Зелень</option>
+                  <option value="tomatoes.svg">Овощи</option>
+                  <option value="cucumbers.svg">Огурцы</option>
+                  <option value="carrots.svg">Морковь</option>
+                  <option value="milk.svg">Молоко</option>
+                  <option value="cheese.svg">Сыр</option>
+                  <option value="apples.svg">Фрукты</option>
+                  <option value="berries.svg">Ягоды</option>
+                  <option value="honey.svg">Мёд</option>
+                  <option value="bread.svg">Хлеб</option>
+                  <option value="meat.svg">Мясо</option>
+                  <option value="eggs.svg">Яйца</option>
+                </select>
+              </div>
+            </div>
+            <button class="btn full" type="submit" style="margin-top:18px">Добавить в кабинет</button>
+          </form>
+        </div>
+        <div>
+          <div class="panel-card">
+            <div class="section-head" style="margin-bottom:18px">
+              <div><span class="kicker">Ассортимент</span><h2>Мои товары</h2></div>
+            </div>
+            <div class="product-list-mini" data-dashboard-products></div>
+          </div>
+          <div class="table-card" style="margin-top:18px">
+            <table class="responsive-table">
+              <thead><tr><th>Заказ</th><th>Клиент</th><th>Окно</th><th>Сумма</th><th>Статус</th></tr></thead>
+              <tbody data-dashboard-orders></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-backdrop" data-modal aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge">Обратная связь</span>
+          <h3 id="modal-title" style="margin-top:12px">Связаться с сервисом</h3>
+        </div>
+        <button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button>
+      </div>
+      <form data-demo-form>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="modal-name">Имя</label>
+            <input class="input" id="modal-name" name="name" required placeholder="Ваше имя">
+          </div>
+          <div class="form-field">
+            <label for="modal-phone">Телефон</label>
+            <input class="input" id="modal-phone" name="phone" required placeholder="+7">
+          </div>
+          <div class="form-field full">
+            <label for="modal-message">Сообщение</label>
+            <textarea class="textarea" id="modal-message" name="message" placeholder="Вопрос о продукции, доставке или подключении фермера"></textarea>
+          </div>
+        </div>
+        <button class="btn full" type="submit" style="margin-top:16px">Сохранить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <img src="assets/img/logo.svg" alt="Логотип Старый фермер">
+            <span><strong>Старый фермер</strong><span>фермерская доставка</span></span>
+          </a>
+          <p>Демонстрационный MVP для ВКР: каталог, корзина, оформление заказа, обратная связь и кабинет производителя.</p>
+        </div>
+        <div>
+          <h4>Покупателю</h4>
+          <a href="catalog.html">Каталог</a>
+          <a href="delivery.html">Доставка</a>
+          <a href="cart.html">Корзина</a>
+        </div>
+        <div>
+          <h4>Производителю</h4>
+          <a href="farmers.html">Партнёры</a>
+          <a href="farmer-cabinet.html">Кабинет</a>
+          <a href="#" data-open-modal>Подключиться</a>
+        </div>
+        <div>
+          <h4>Проект</h4>
+          <a href="index.html#model">Бизнес-модель</a>
+          <a href="index.html#trust">Прозрачность</a>
+          <a href="#" data-open-modal>Обратная связь</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Старый фермер. Учебный проект.</span>
+        <span>Локальные данные хранятся в браузере.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

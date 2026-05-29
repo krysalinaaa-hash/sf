@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Старый фермер — MVP веб-сервиса доставки фермерской продукции напрямую от малых производителей к конечному потребителю.">
+  <title>Главная — Старый фермер</title>
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">К основному содержимому</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="На главную">
+        <img src="assets/img/logo.svg" alt="" aria-hidden="true">
+        <span><strong>Старый фермер</strong><span>прямо от хозяйств</span></span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="primary-nav" data-primary-nav aria-label="Основное меню">
+        <a class="nav-link" data-nav-link href="index.html">Главная</a>
+        <a class="nav-link" data-nav-link href="catalog.html">Каталог</a>
+        <a class="nav-link" data-nav-link href="farmers.html">Фермеры</a>
+        <a class="nav-link" data-nav-link href="delivery.html">Доставка</a>
+        <a class="nav-link" data-nav-link href="farmer-cabinet.html">Кабинет фермера</a>
+      </nav>
+      <div class="header-actions">
+        <a class="cart-pill" href="cart.html" aria-label="Перейти в корзину"><b>Корзина</b><span data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">MVP веб-платформы доставки</span>
+          <h1>Фермерская продукция напрямую к покупателю</h1>
+          <p class="lead">«Старый фермер» связывает малые хозяйства и конечных потребителей: свежие овощи, молочные продукты, мясо, мёд и выпечка доставляются до двери без лишних посредников.</p>
+          <div class="hero-actions">
+            <a class="btn" href="catalog.html">Открыть каталог</a>
+            <a class="btn secondary" href="farmers.html">Посмотреть фермеров</a>
+            <button class="btn ghost" type="button" data-open-modal>Оставить заявку</button>
+          </div>
+          <div class="hero-points">
+            <div class="point"><span class="point-icon">🚚</span><div><b>До 24 часов</b><small>после комплектации заказа</small></div></div>
+            <div class="point"><span class="point-icon">🌿</span><div><b>Прозрачность</b><small>паспорт партии и происхождение</small></div></div>
+            <div class="point"><span class="point-icon">👩‍🌾</span><div><b>Малые фермеры</b><small>прямое взаимодействие без складской модели</small></div></div>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <img class="hero-img" src="assets/img/hero-farm.svg" alt="">
+          <div class="float-card one"><strong>357 млн ₽</strong><span>реалистичный SOM на старте</span></div>
+          <div class="float-card two"><strong>70%</strong><span>цель удержания клиентов</span></div>
+          <div class="float-card three"><strong>3 000 ₽</strong><span>средний чек MVP</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card reveal"><strong>59,5</strong><span>млрд ₽ потенциальная ёмкость рынка фермерской продукции в Москве и области.</span></div>
+          <div class="stat-card reveal"><strong>1,65</strong><span>млн потенциальных клиентов при выбранной целевой аудитории.</span></div>
+          <div class="stat-card reveal"><strong>682</strong><span>₽ расчётная стоимость привлечения клиента в маркетинговой воронке.</span></div>
+          <div class="stat-card reveal"><strong>24</strong><span>часа — ориентир доставки после комплектации свежего заказа.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog-preview">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Ассортимент</span>
+            <h2>Категории фермерской корзины</h2>
+          </div>
+          <p>Каталог строится вокруг привычной продуктовой корзины: покупателю удобно планировать покупки, а фермеру — заранее комплектовать партии.</p>
+        </div>
+        <div class="category-grid" data-categories-grid></div>
+      </div>
+    </section>
+
+    <section class="section" id="trust">
+      <div class="container traceability">
+        <div class="trace-card reveal">
+          <span class="badge honey">Информационная ценность</span>
+          <h2 style="margin-top:16px">Доверие через паспорт продукта</h2>
+          <p>Ключевая идея проекта — превратить информацию о происхождении, хранении и доставке в фактор доверия. Покупатель видит не только цену, но и путь продукта.</p>
+          <div class="passport" aria-label="Пример паспорта продукта">
+            <div class="passport-row"><span>Производитель</span><b>Ивановы. Молочная ферма</b></div>
+            <div class="passport-row"><span>Дата фасовки</span><b>сегодня, 07:30</b></div>
+            <div class="passport-row"><span>Условия</span><b>холодовая цепь 2-6 °C</b></div>
+            <div class="passport-row"><span>Доставка</span><b>до двери, 2-часовой слот</b></div>
+          </div>
+        </div>
+        <div class="journey">
+          <div class="journey-step reveal"><span class="num">1</span><div><h3>Выбор продуктов</h3><p>Покупатель фильтрует каталог по категории, цене, свежести и ЭКО-маркировке.</p></div></div>
+          <div class="journey-step reveal"><span class="num">2</span><div><h3>Комплектация у фермера</h3><p>Партия собирается под заказ, что сокращает складские промежуточные этапы.</p></div></div>
+          <div class="journey-step reveal"><span class="num">3</span><div><h3>Доставка и обратная связь</h3><p>Клиент выбирает окно доставки, подтверждает заказ и может оставить отзыв.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Популярное</span>
+            <h2>Продукты для первого заказа</h2>
+          </div>
+          <a class="btn secondary" href="catalog.html">Весь каталог</a>
+        </div>
+        <div class="product-grid" data-featured-products></div>
+      </div>
+    </section>
+
+    <section class="section" id="model">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="kicker">MVP и бизнес-модель</span>
+            <h2>Что проверяет прототип</h2>
+          </div>
+          <p>В проект заложен подход Lean Startup: сначала базовая веб-платформа для проверки спроса, затем развитие мобильного приложения, аналитики и персонализации.</p>
+        </div>
+        <div class="info-grid">
+          <div class="info-card reveal"><div class="icon">🛒</div><h3>Каталог и корзина</h3><p>Покупатель выбирает продукты, видит производителя, свежесть, цену и добавляет позиции в корзину.</p></div>
+          <div class="info-card reveal"><div class="icon">📍</div><h3>Окно доставки</h3><p>В оформлении заказа есть адрес, дата, время и способ оплаты в демо-режиме.</p></div>
+          <div class="info-card reveal"><div class="icon">⭐</div><h3>Обратная связь</h3><p>Форма заявки и будущая система отзывов помогают оценивать качество сервиса.</p></div>
+          <div class="info-card reveal"><div class="icon">📊</div><h3>Кабинет фермера</h3><p>Производитель может добавлять товары и видеть демо-заказы, что показывает вторую сторону платформы.</p></div>
+        </div>
+        <div class="cta-box reveal">
+          <div>
+            <h2>Готовый прототип можно показывать как сайт MVP</h2>
+            <p>Он работает без внешних библиотек и интернета: все изображения — SVG внутри проекта, корзина и заказы сохраняются локально в браузере.</p>
+          </div>
+          <a class="btn" href="cart.html">Проверить оформление</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="modal-backdrop" data-modal aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <div>
+          <span class="badge">Обратная связь</span>
+          <h3 id="modal-title" style="margin-top:12px">Связаться с сервисом</h3>
+        </div>
+        <button class="modal-close" type="button" data-close-modal aria-label="Закрыть">×</button>
+      </div>
+      <form data-demo-form>
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="modal-name">Имя</label>
+            <input class="input" id="modal-name" name="name" required placeholder="Ваше имя">
+          </div>
+          <div class="form-field">
+            <label for="modal-phone">Телефон</label>
+            <input class="input" id="modal-phone" name="phone" required placeholder="+7">
+          </div>
+          <div class="form-field full">
+            <label for="modal-message">Сообщение</label>
+            <textarea class="textarea" id="modal-message" name="message" placeholder="Вопрос о продукции, доставке или подключении фермера"></textarea>
+          </div>
+        </div>
+        <button class="btn full" type="submit" style="margin-top:16px">Сохранить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html">
+            <img src="assets/img/logo.svg" alt="Логотип Старый фермер">
+            <span><strong>Старый фермер</strong><span>фермерская доставка</span></span>
+          </a>
+          <p>Демонстрационный MVP для ВКР: каталог, корзина, оформление заказа, обратная связь и кабинет производителя.</p>
+        </div>
+        <div>
+          <h4>Покупателю</h4>
+          <a href="catalog.html">Каталог</a>
+          <a href="delivery.html">Доставка</a>
+          <a href="cart.html">Корзина</a>
+        </div>
+        <div>
+          <h4>Производителю</h4>
+          <a href="farmers.html">Партнёры</a>
+          <a href="farmer-cabinet.html">Кабинет</a>
+          <a href="#" data-open-modal>Подключиться</a>
+        </div>
+        <div>
+          <h4>Проект</h4>
+          <a href="index.html#model">Бизнес-модель</a>
+          <a href="index.html#trust">Прозрачность</a>
+          <a href="#" data-open-modal>Обратная связь</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Старый фермер. Учебный проект.</span>
+        <span>Локальные данные хранятся в браузере.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+  
+</body>
+</html>
